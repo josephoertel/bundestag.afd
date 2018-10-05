@@ -1,6 +1,12 @@
-# hello-world
-## das ist ein Test
+# Markdown
+## Erstes Dokument
 
-This is my first Git Repository 
-Ich heiße Joseph 
-Das ist ein Test um herauszufinden, wie das hier so funktioniert
+Eine Liste wird in folgenden Schritten erstellt 'print'
+1. Das ist der erste Punkt
+2. Das ist der zweite Punkt
+3. [Das ist ein Link](https://www.google.com)
+
+'''r
+if{y=3}
+print("hello world")
+'''
