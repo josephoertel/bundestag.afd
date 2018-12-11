@@ -11,7 +11,7 @@ Der Ordner *Manuscript* enthält alle Grafiken, etc. und das LaTeX Dokument, so 
 
 Die Ordner *reden* enthalten die XML-Files 
 
-Der Ordner *Parse-Funktionen* enthält die zwei Funktionen, einmal für vor2017 mit RegeX und einmal nach2017 mit XML-Nodes 
+Der Ordner *Parse-Funktionen* enthält die zwei Funktionen, einmal für vor2017 mit RegeX und einmal nach2017 mit XML-Nodes. Außerdem sind die Skripte für die Funktionen und die Syntax *daten-laden* enthalten, die die Funktionen anwendet und noch Parteien und Datum anpasst. Die Syntax *daten-laden* auszuführen dauert etwa 3 Studen, daher ist der Output davon in *Ergebnisdaten* gespeichert.  
 
 Der Ordner *Syntax* enthält alle Skripte nach Aufgaben aufgeteilt: 
  
