@@ -1,0 +1,21 @@
+{
+    "debugBreakpointsState" : {
+        "breakpoints" : [
+            {
+                "editor_line_number" : 74,
+                "editor_state" : 2,
+                "function_name" : "parse_nach17",
+                "function_steps" : "",
+                "id" : 1,
+                "is_package_breakpoint" : false,
+                "is_pending_debug_completion" : false,
+                "line_number" : 74,
+                "needs_updated_steps" : true,
+                "package_name" : "",
+                "path" : "C:/Users/Joseph Oertel/OneDrive - Zeppelin-University gGmbH/Paper/Zeppelin Projekt AfD Bundestag/bundestag.afd/Syntax/Syntaxnach17.R",
+                "state" : 2,
+                "type" : 0
+            }
+        ]
+    }
+}

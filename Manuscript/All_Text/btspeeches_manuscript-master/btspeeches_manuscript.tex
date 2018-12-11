@@ -1,0 +1,137 @@
+\documentclass[12pt, letterpaper]{article}
+
+%==========
+
+\setlength{\oddsidemargin}{0in}  %left margin position, reference is one inch
+\setlength{\textwidth}{6.5in}    %width of text=8.5-1in-1in for margin
+\setlength{\topmargin}{-0.5in}    %reference is at 1.5in, -.5in gives a start of about 1in from top
+\setlength{\textheight}{9in}     %length of text=11in-1in-1in (top and bot. marg.) 
+
+%==============Packages & Commands=================
+
+%========== MS
+
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}% Include figure files
+\usepackage{caption}
+\usepackage{color}% Include colors for document elements
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{bm}% bold math
+
+\usepackage[natbibapa]{apacite}
+\bibliographystyle{apacite}
+
+%\usepackage{todonotes}
+
+\usepackage{fontspec}
+\usepackage{polyglossia}
+
+\usepackage{setspace}
+
+\usepackage{enumitem}
+
+\usepackage{changepage}
+
+\usepackage{lipsum}
+
+\usepackage{scrextend}
+
+\usepackage{booktabs}
+
+\usepackage{subfigure}
+
+\usepackage{longtable}
+\usepackage{ltxtable} 
+\usepackage{tabularx}
+\usepackage{changepage}
+\usepackage{float}
+%\usepackage{fancyhdr}
+
+%===============Some new commands==================
+\newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{}\\}
+
+\usepackage{titling}
+
+\newcommand{\subtitle}[1]{%
+	\posttitle{%
+		\par\end{center}
+	\begin{center}\large#1\end{center}
+	\vskip0.5em}%
+}
+
+\newcommand*\samethanks[1][\value{footnote}]{\footnotemark[#1]}
+
+\newcommand{\bscom}[2]{%
+	% #1 Original text.
+	% #2 Replacement text.
+	\st{#1}{\color{blue}\fontsize{8}{8}\selectfont\,#2}}
+
+
+\RequirePackage{color}
+\RequirePackage{soul}
+\setstcolor{blue}
+
+\newcommand{\com}[1]{%
+	% #1 Original text.
+	% #2 Replacement text.
+	{\color{blue}\fontsize{8}{8}\selectfont\,#1}}
+    
+ \newcommand{\red}[1]{%
+	% #1 Original text.
+	% #2 Replacement text.
+	{\color{red}\fontsize{14}{14}\selectfont\,#1}}
+
+ \newcommand{\ms}[1]{%
+	% #1 Original text.
+	% #2 Replacement text.
+	{\color{green}\fontsize{14}{14}\selectfont\,#1}}
+
+
+
+%============Article Title, Authors================
+
+
+
+
+\title{Veränderung der Kommunikation im Bundestag seit dem Einzug der AfD 2017}
+\subtitle{Kommunikationstheoretische Analyse der Bundestagsprotokolle}
+
+\author{Nils Heinemann \thanks{Politics, Administration \& International Relations}  \\[3ex] Vivian Clausen \thanks{Comunication, Culture \& Management} \and Mehmet Cetin \thanks{Sociology, Politics \& Economics} \\[3ex] Joseph Oertel \thanks{Politics, Administration \& International Realtions}\\[3ex]}
+%\date{}
+
+
+\begin{document}
+	
+	\maketitle
+	\doublespacing
+	
+\input{abstract.tex}
+	
+	\clearpage
+	
+	%================Begin Manuscript==================
+	\newpage
+	\input{general_thoughts.tex}
+	\input{introduction.tex}
+	\input{literature.tex}	
+	\input{theory.tex}
+	\input{methodology.tex}
+	\input{results.tex}
+	\input{discussion.tex}
+	
+	%===================References=====================
+	\newpage
+	
+	\section{Bibliography}
+	%\nocite{*}
+	\bibliography{Quellen/Joseph}
+	\newpage
+	
+	\section{Appendix}
+	
+	\listoftables
+	\listoffigures
+	\input{appendix.tex}
+	
+	%===================End Document===================
+\end{document}
