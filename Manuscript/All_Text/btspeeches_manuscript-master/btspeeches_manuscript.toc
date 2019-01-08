@@ -1,0 +1,21 @@
+\contentsline {section}{\numberline {1}General Thoughts/Ideas}{3}
+\contentsline {section}{\numberline {2}Introduction}{4}
+\contentsline {section}{\numberline {3}Literature}{4}
+\contentsline {section}{\numberline {4}Theory \& Hypotheses}{5}
+\contentsline {section}{\numberline {5}Methodology and Data}{6}
+\contentsline {section}{\numberline {6}Results}{7}
+\contentsline {subsection}{\numberline {6.1}Hypothese 1: Themen der Bundestagsreden}{7}
+\contentsline {subsubsection}{\numberline {6.1.1}Reliabilität der Stichprobe}{7}
+\contentsline {subsubsection}{\numberline {6.1.2}Hypothese 1a: Wenige Themen dominieren}{9}
+\contentsline {subsubsection}{\numberline {6.1.3}Hypothese 1b: Inhaltliche Distanz zum Tagesordnungspunkt}{10}
+\contentsline {subsubsection}{\numberline {6.1.4}Hypothese 1c: Lenkung von Themen}{10}
+\contentsline {subsection}{\numberline {6.2}Hypothese 2: Sprachverständlichkeit}{15}
+\contentsline {subsection}{\numberline {6.3}Hypothese 3: Isolation der Parteien}{16}
+\contentsline {subsubsection}{\numberline {6.3.1}Klatschen für andere Fraktionen}{17}
+\contentsline {subsubsection}{\numberline {6.3.2}Klatschen für die eigene Fraktion}{18}
+\contentsline {subsubsection}{\numberline {6.3.3}Geschlossenheit der Parteien}{20}
+\contentsline {subsubsection}{\numberline {6.3.4}Isolierung in der Wortwahl}{21}
+\contentsline {subsubsection}{\numberline {6.3.5}Negative Interaktionen}{22}
+\contentsline {section}{\numberline {7}Discussion}{22}
+\contentsline {section}{\numberline {8}Bibliography}{23}
+\contentsline {section}{\numberline {9}Appendix}{24}

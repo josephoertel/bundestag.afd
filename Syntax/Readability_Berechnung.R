@@ -12,17 +12,17 @@ install.koRpus.lang("de")
 #spacy_finalize()
 
 
-load("Ergebnisdaten/corpus_09_13.R")
+load("Ergebnisdaten/korpus09_13.RData")
 reden09<- all_reden
 
-load("Ergebnisdaten/corpus_13_17.R")
+load("Ergebnisdaten/korpus13_17.RData")
 reden13 <- all_reden
 
-load("Ergebnisdaten/corpus_okt17_okt18.R")
+load("Ergebnisdaten/korpus_okt17_okt18.RData")
 reden17 <- all_corpus
 
-all_corpus <- NULL
-all_reden<- NULL
+rm(all_corpus)
+rm(all_reden)
 
 party_vector_17 <- reden17$party %>% unique()
 
@@ -37,28 +37,7 @@ reden09$party         %<>% str_extract(paste(party_regex, collapse = "|"))
 reden13$speaker_party %<>% str_extract(paste(party_regex, collapse = "|"))
 reden13$party         %<>% str_extract(paste(party_regex, collapse = "|"))
 
-reden09$speaker_party %<>% str_replace("LINKEN", "DIE LINKE")
-reden09$party         %<>% str_replace("LINKEN", "DIE LINKE")
-reden13$speaker_party %<>% str_replace("LINKEN", "DIE LINKE")
-reden13$party         %<>% str_replace("LINKEN", "DIE LINKE")
-reden17$speaker_party %<>% str_replace("LINKEN", "DIE LINKE")
-reden17$party         %<>% str_replace("LINKEN", "DIE LINKE")
 
-reden09$speaker_party %<>% str_replace("B.NDNIS.90\\/DIE.GR.NEN", "GRÜNE")
-reden09$party         %<>% str_replace("B.NDNIS.90\\/DIE.GR.NEN", "GRÜNE")
-reden13$speaker_party %<>% str_replace("B.NDNIS.90\\/DIE.GR.NEN", "GRÜNE")
-reden13$party         %<>% str_replace("B.NDNIS.90\\/DIE.GR.NEN", "GRÜNE")
-reden17$speaker_party %<>% str_replace("B.NDNIS.90\\/DIE.GR.NEN", "GRÜNE")
-reden17$party         %<>% str_replace("B.NDNIS.90\\/DIE.GR.NEN", "GRÜNE")
-reden17$speaker_party %<>% str_replace("B.NDNIS.90\\/DIE.GR.NEN", "GRÜNE")
-
-reden09$speaker_party %<>% str_replace("BÜNDNIS 90\\/ DIE GRÜNEN","GRÜNE")
-reden09$party         %<>% str_replace("BÜNDNIS 90\\/ DIE GRÜNEN","GRÜNE")
-reden13$speaker_party %<>% str_replace("BÜNDNIS 90\\/ DIE GRÜNEN","GRÜNE")
-reden13$party         %<>% str_replace("BÜNDNIS 90\\/ DIE GRÜNEN","GRÜNE")
-reden17$speaker_party %<>% str_replace("BÜNDNIS 90\\/ DIE GRÜNEN","GRÜNE")
-reden17$party         %<>% str_replace("BÜNDNIS 90\\/ DIE GRÜNEN","GRÜNE")
-reden17$speaker_party %<>% str_replace("BÜNDNIS 90\\/ DIE GRÜNEN","GRÜNE")
 
 # 1. Datensatz auf Reden reduzieren
 reden09%<>% select(date, speaker_party, speech)%>% distinct()
@@ -72,8 +51,7 @@ reden13<- reden13[!is.na(reden13$speaker_party),]
 reden17<- reden17[!is.na(reden17$speaker_party),]
 
 #3. Zu einem Datensatz: 
-reden09$date %<>% dmy()
-reden13$date %<>% dmy()
+
 all_sample <- bind_rows(reden09, reden13, reden17) %>% filter(speaker_party %in% party_vector_17)
 
 #4. Nach Monaten und Partein gruppieren 
@@ -93,7 +71,7 @@ all_sample %<>% filter(stri_length(all_sample$text) > 200)
 #  }
 
 
-for (i in 89: length(all_sample$text)){
+for (i in 1: length(all_sample$text)){
   all_sample[i, "FRE"] <- tokenize(txt = all_sample[i, "text"],format = "obj", lang = "de", fileEncoding = "UTF-8", ign.comp = FALSE)%>% flesch(parameters = "de") %>% .@Flesch %>% as.data.frame() %>%.[,2] 
   print(i)
 } 
@@ -106,9 +84,19 @@ save(readability09_17, file= "Ergebnisdaten/readability09_17.R")
 load("Ergebnisdaten/readability09_17.R")
 
 # Plot 
-readability09_17 %>%
-ggplot(aes(x= month, y= FRE, col = speaker_party)) +
-  geom_line()
+readability_mean <- readability09_17 %>% filter(month > as.Date("2017-10-01")) %>%
+group_by(speaker_party) %>% 
+summarise(mean = mean(FRE)) %>% .[order(.$mean),]  
+readability_mean$speaker_party %<>% str_replace("BÜNDNIS 90/ DIE GRÜNEN", "GRÜNE")
+readability_mean %>% 
+ggplot(aes(y = mean, x = reorder(speaker_party, mean))) +
+  geom_bar(stat = "identity")+
+  coord_flip(ylim=c(57.5, 61.5)) +
+  labs(title = "Readability Index (2017) nach Ahmstadt")+
+  theme(axis.title=element_blank())+
+  theme(panel.background = element_rect(fill = "white", colour = "grey50"))+
+  scale_fill_manual(values=c("gray84", "grey37"))+
+  theme(legend.title = element_blank())
 
-ggsave(plot = last_plot(), filename = "Manuscript/Grafiken/Readability_line.png")
+ggsave(plot = last_plot(), filename = "Manuscript/All_Text/btspeeches_manuscript-master/Grafiken/Readability_line.png")
 

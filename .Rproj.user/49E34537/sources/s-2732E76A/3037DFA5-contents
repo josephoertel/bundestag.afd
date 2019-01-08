@@ -1,0 +1,26 @@
+library(tidyverse)
+library(rvest)
+library(stringr)
+library(lubridate)
+library(test)
+url <-'http://www.trustpilot.com/review/www.amazon.com'
+
+get_last_page <- function(html){
+  
+  pages_data <- html %>% 
+                  
+                  html_nodes(".pagination-page") %>% 
+                  html_text()
+
+
+pages_data[(length(pages_data)-1)] %>% 
+  unname() %>% 
+  as.numeric()
+}
+
+
+first_page <- read_html(url)  
+get_last_page(first_page)
+
+list_of_pages <- str_c(url, "?page=", 1:latest_page_number)
+

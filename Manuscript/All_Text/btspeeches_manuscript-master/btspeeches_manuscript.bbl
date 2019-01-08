@@ -7,9 +7,9 @@ Amstad%
 }{%
 {\protect \APACyear {1978}}%
 }]{%
-amstad_wie_1978}
+amstadWieVerstandlichSind1978}
 \APACinsertmetastar {%
-amstad_wie_1978}%
+amstadWieVerstandlichSind1978}%
 \begin{APACrefauthors}%
 Amstad, T.%
 \end{APACrefauthors}%
@@ -17,10 +17,10 @@ Amstad, T.%
 \newblock
 \APACrefYear{1978}.
 \newblock
-\APACrefbtitle {Wie verständlich sind unsere {Zeitungen}?} {Wie verständlich
-  sind unsere {Zeitungen}?}
+\APACrefbtitle {Wie Verst\"andlich Sind Unsere {{Zeitungen}}?} {Wie
+  verst\"andlich sind unsere {{Zeitungen}}?}
 \newblock
-\APACaddressPublisher{}{Studenten-Schreib-Service}.
+\APACaddressPublisher{}{{Studenten-Schreib-Service}}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -34,9 +34,9 @@ Michalke%
 \ \protect \BOthers {.}}{%
 {\protect \APACyear {2018}}%
 }]{%
-michalke_korpus:_2018}
+michalkeKoRpusPackageText2018}
 \APACinsertmetastar {%
-michalke_korpus:_2018}%
+michalkeKoRpusPackageText2018}%
 \begin{APACrefauthors}%
 Michalke, M.%
 , Brown, E.%
@@ -48,12 +48,31 @@ Michalke, M.%
 \newblock
 \APACrefYearMonthDay{2018}{{\APACmonth{10}}}{}.
 \newblock
-\APACrefbtitle {{koRpus}: {An} {R} {Package} for {Text} {Analysis}.} {{koRpus}:
-  {An} {R} {Package} for {Text} {Analysis}.}
+\APACrefbtitle {{{koRpus}}: {{An R Package}} for {{Text Analysis}}.}
+  {{{koRpus}}: {{An R Package}} for {{Text Analysis}}.}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Watanabe%
+}{%
+Watanabe%
+}{%
+{\protect \APACyear {2018}}%
+}]{%
+watanabeSemisupevisedModelDocument2018}
+\APACinsertmetastar {%
+watanabeSemisupevisedModelDocument2018}%
+\begin{APACrefauthors}%
+Watanabe, K.%
+\end{APACrefauthors}%
+\unskip\
 \newblock
-\begin{APACrefURL}
-  [{2018-11-15}]\url{https://CRAN.R-project.org/package=koRpus}
-  \end{APACrefURL}
+\APACrefYearMonthDay{2018}{{\APACmonth{12}}}{}.
+\newblock
+\APACrefbtitle {A Semi-Supevised Model for Document Scaling. {{Contribute}} to
+  Koheiw/{{LSS}} Development by Creating an Account on {{GitHub}}.} {A
+  semi-supevised model for document scaling. {{Contribute}} to koheiw/{{LSS}}
+  development by creating an account on {{GitHub}}.}
 \PrintBackRefs{\CurrentBib}
 
 \end{thebibliography}
